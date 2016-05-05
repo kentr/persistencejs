@@ -161,8 +161,10 @@ Use following if you want to use `persistencejs` in a [Cordova](https://cordova.
       'My database',          // DB display name
       5 * 1024 * 1024,        // DB size (WebSQL fallback only)
       0,                      // SQLitePlugin Background processing disabled
-      2                       // DB location (iOS only), 0 (default): Documents, 1: Library, 2: Library/LocalDatabase
-                              //   0: iTunes + iCloud, 1: NO iTunes + iCloud, 2: NO iTunes + NO iCloud
+      'default',              // DB location (iOS only, REQUIRED).  Options:
+                              //   * 'default': NO iTunes + NO iCloud.  Equivalent to the former value of `location = 2`
+                              //   * 'Library': NO iTunes + iCloud
+                              //   * 'Documents': iTunes + iCloud
                               //   More information at https://github.com/litehelpers/Cordova-sqlite-storage#opening-a-database
     );
 
